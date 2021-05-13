@@ -43,7 +43,7 @@
       <div class="card my-4">
         <h5 class="card-header">Leave a Comment:</h5>
         <div class="card-body">
-          <form action="{{route('comments.store')}}" method="post">
+          <form action="{{route('comments.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             
             <div class="form-group col-sb-3" >

@@ -25,6 +25,8 @@
                   <th>Image</th>
                   <th>Created At</th>
                   <th>Updated At</th>
+                  <th>View Post</th>
+                  <th>View Comments</th>
                   <th>Action</th>
 
               
@@ -38,6 +40,8 @@
                   <th>Image</th>
                   <th>Created At</th>
                   <th>Updated At</th>
+                  <th>View Post</th>
+                  <th>View Comments</th>
                   <th>Action</th>
                   
                 </tr>
@@ -53,6 +57,10 @@
                   </td>
                   <td>{{$post->created_at->diffForHumans()}}</td>
                   <td>{{$post->updated_at->diffForHumans()}}</td>
+
+                  <td><a href="{{route('post',$post->id)}}">View </a></td>
+                  <td><a href="{{route('post.comment',$post->id)}}">View </a></td>
+                            
                   <td>
 
                     {{-- @can('view',$post) --}}
