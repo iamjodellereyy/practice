@@ -28,12 +28,13 @@ Route::get('/login',function(){
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/post{post}','PostController@show')->name('post');
+
 
 
 Route::middleware('auth')->group(function(){
 
     Route::get('/admin', 'AdminsController@index')->name('admin.index');
+    Route::get('/post{post}','PostController@show')->name('post');
     
 });
 
@@ -57,6 +58,7 @@ Route::middleware('role:Admin','auth')->group(function(){
     Route::delete('permissions/{permission}','PermissionController@destroy')->name('permissions.destroy');
 
     Route::get('/comments','PostCommentsController@index')->name('comments.index');
+    Route::post('/comments/store','PostCommentsController@store')->name('comments.store');
     Route::get('/replies','CommentRepliesController@index')->name('replies.index');
 });
 
