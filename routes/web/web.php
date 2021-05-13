@@ -43,7 +43,7 @@ Route::middleware('role:Admin','auth')->group(function(){
     Route::put('/users/{user}/attach','UserController@attach')->name('user.role.attach');
     Route::put('/users/{user}/detach','UserController@detach')->name('user.role.detach');
 
-
+    
     Route::get('/roles','RoleController@index')->name('roles.index');
     Route::post('/roles','RoleController@store')->name('roles.store');
     Route::delete('/roles/{role}','RoleController@destroy')->name('roles.destroy');
