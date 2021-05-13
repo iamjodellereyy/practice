@@ -72,6 +72,7 @@ Route::middleware('role:Admin','auth')->group(function(){
     Route::delete('permissions/{permission}','PermissionController@destroy')->name('permissions.destroy');
 });
 
+// ['can:view,user']
 Route::middleware(['can:view,user'])->group(function(){
     Route::get('users/{user}/profile','UserController@show')->name('user.profile.show');
 });

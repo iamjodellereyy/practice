@@ -32,11 +32,11 @@ class PostPolicy
     {   
         //murag mao ni ang hinungdan nga sa admin iyaha ra sd iyang ma view
         //kailangan ug condition
-        // if(!auth()->user()->userHasRole('Admin')){
-        //     return $user->id === $post->user_id;
-        // }
+        if(!auth()->user()->userHasRole('Admin')){
+            return $user->id === $post->user_id;
+        }
         
-        //
+        
     }
 
     /**
