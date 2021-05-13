@@ -23,4 +23,8 @@ class Post extends Model
         }
         return asset('storage/' . $value);
     }
+    
+    public function comments(){
+        return $this->hasMany(Post::class);
+    }
 }

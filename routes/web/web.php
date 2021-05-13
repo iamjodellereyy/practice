@@ -55,6 +55,9 @@ Route::middleware('role:Admin','auth')->group(function(){
     Route::get('/permissions','PermissionController@index')->name('permissions.index');
     Route::post('/permissions','PermissionController@store')->name('permissions.store');
     Route::delete('permissions/{permission}','PermissionController@destroy')->name('permissions.destroy');
+
+    Route::get('/comments','PostCommentsController@index')->name('comments.index');
+    Route::get('/replies','CommentRepliesController@index')->name('replies.index');
 });
 
 
