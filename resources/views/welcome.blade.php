@@ -11,7 +11,7 @@
         <div class="card-body">
           <h2 class="card-title">{{$post->title}}</h2>
           <p class="card-text">{{Str::limit($post->body,'50','.....')}}</p>
-          <a href="{{route('post',$post->id)}}" class="btn btn-primary">Read More &rarr;</a>
+          <a href="{{route('post',$post->slug)}}" class="btn btn-primary">Read More &rarr;</a>
         </div>
         <div class="card-footer text-muted">
           {{$post->created_at->diffForHumans()}}
