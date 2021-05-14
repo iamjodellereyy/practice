@@ -8,7 +8,7 @@ class Comment extends Model
 {
     //
     
-    protected $fillable = [ 'post_id', 'author','email','is_active','body' ];
+    protected $fillable = [ 'post_id', 'author','email','is_active','body','photo' ];
 
     public function replies(){
         return $this->hasMany(CommentReply::class);

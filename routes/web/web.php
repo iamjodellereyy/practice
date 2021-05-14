@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/comments/{comment}','PostCommentsController@show')->name('post.comment');
 
     Route::get('/replies','CommentRepliesController@index')->name('replies.index');
+    Route::post('/comment/reply','CommentRepliesController@createReply')->name('replies.create');
     
 });
 

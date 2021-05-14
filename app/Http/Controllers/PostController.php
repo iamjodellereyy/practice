@@ -26,9 +26,13 @@ class PostController extends Controller
         return view('admin.posts.index',['posts'=>$posts]);
     }
     public function show(Post $post){
-        return view('blog-post',['post'=>$post]);
-    }
+        // $post = Post::findOrFail($id);
+        // $comment = $post->comments->whereIsActive(1)->get();
 
+         $comment = $post->comments()->where('is_active', 1)->get();
+        return view('blog-post',['post'=>$post,'comments'=>$comment]);
+    }
+    
     public function create(){
         return view('admin.posts.create');
     }

@@ -23,6 +23,10 @@ class Post extends Model
         }
         return asset('storage/' . $value);
     }
+
+    // public function whereIsActive(){
+
+    // }
     
     //post ang class nga una nako na butang
     public function comments(){
