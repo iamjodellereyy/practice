@@ -62,45 +62,63 @@
 
       {{-- @if(count($comments) > 0) --}}
       @foreach($comments as $comment)
+
       <!-- Comment with nested comments -->
       <div class="media mb-4">
         <img height="50" width="50" class="d-flex mr-3 rounded-circle" src="{{$comment->photo}}" alt="">
         <div class="media-body">
-          <h5 class="mt-0">{{$comment->author}}</h5>
-          {{$comment->body}}
+          <h5 class="mt-0">{{$comment->author}}
+            <small>{{$comment->created_at->diffForHumans()}}</small>
+          </h5>
+          <p>{{$comment->body}}</p>
 
-          <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            
-            
-              <form action="{{route('replies.create')}}" method="post" enctype="multipart/form-data">
-                @csrf
+
+          <!----- comment nested -------->
+
+          {{-- @if(count($comment->replies) > 0)
+          @foreach($comment->replies as $reply)
+           --}}
+          {{-- <div class="media mt-4">
+                <img height="50" width="50" class="d-flex mr-3 rounded-circle" src="{{$reply->photo}}" alt="">
+
+                <div class="media-body">
+                  <h5 class="mt-0">{{$reply->author}} 
+                    <small>{{$reply->created_at->diffForHumans()}}</small>
+                  </h5>   
+                  {{$reply->body}}
                 
-                <input type="hidden" name="comment_id" value="{{$comment->id}}">
-                <div class="form-group col-sb-3" >
-                  <input type="hidden" name="post_id" value="{{$post->id}}">
-                </div> 
-                <div class="form-group">
-                  <textarea name="body" class="form-control" rows="1" placeholder="Content"></textarea>
+                
+                
+                  <form action="{{route('replies.create')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    
+                    <input type="hidden" name="comment_id" value="{{$comment->id}}">
+                    <div class="form-group col-sb-3" >
+                      <input type="hidden" name="post_id" value="{{$post->id}}">
+                    </div> 
+                    <div class="form-group">
+                      <textarea name="body" class="form-control" rows="1" placeholder="Content"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            
-            </div>
 
-
-
-          </div>
+              @endforeach
+              @endif
+          </div> --}}
         
         @endforeach
         {{-- @endif --}}
+
+
+
+
 
         </div>
       </div>
 
     @endsection
 
+    
 </x-master>

@@ -30,6 +30,7 @@ class PostController extends Controller
         // $comment = $post->comments->whereIsActive(1)->get();
 
          $comment = $post->comments()->where('is_active', 1)->get();
+
         return view('blog-post',['post'=>$post,'comments'=>$comment]);
     }
     
