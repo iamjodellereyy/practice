@@ -36,6 +36,13 @@ class PostCommentsController extends Controller
         
         return back();
     }
+    
+    public function show($id){
+        $post = Post::findOrFail($id);
+        //kani ang problema
+        $comment = $post->comments;
+        return view('admin.comments.show',['posts'=>$post,'comments'=>$comment]);
+    }
 
     public function update(Request $request,$id){
         Comment::findOrFail($id)->update($request->all());

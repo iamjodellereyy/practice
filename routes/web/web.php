@@ -35,12 +35,16 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/admin', 'AdminsController@index')->name('admin.index');
     Route::get('/post{post}','PostController@show')->name('post');
-    Route::get('/post{post}/comment','PostController@showComment')->name('post.comment');
+
+   
 
     Route::get('/comments','PostCommentsController@index')->name('comments.index');
     Route::post('/comments/store','PostCommentsController@store')->name('comments.store');
     Route::patch('/comments/{comment}/update','PostCommentsController@update')->name('comments.update');
     Route::delete('/comments/{comment}/delete','PostCommentsController@destroy')->name('comments.destroy');
+   
+    Route::get('/comments/{comment}','PostCommentsController@show')->name('post.comment');
+
     Route::get('/replies','CommentRepliesController@index')->name('replies.index');
     
 });

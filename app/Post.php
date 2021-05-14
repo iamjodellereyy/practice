@@ -24,7 +24,8 @@ class Post extends Model
         return asset('storage/' . $value);
     }
     
+    //post ang class nga una nako na butang
     public function comments(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Comment::class);
     }
 }
