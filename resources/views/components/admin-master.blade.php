@@ -307,6 +307,7 @@
         </div>
         <!-- /.container-fluid -->
 
+        @yield('scripts')
       </div>
       <!-- End of Main Content -->
 
@@ -343,7 +344,7 @@
   <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
 
-  @yield('scripts')
+  <!------i balhin niya ni del --------->
 
 </body>
 
