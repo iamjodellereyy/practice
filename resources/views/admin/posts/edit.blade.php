@@ -4,7 +4,7 @@
         <h1>Edit a Post</h1>
 
         <div class="col-md-6">
-            <form method="post" action="{{route('post.update',$post->id)}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('post.update',$post->slug)}}" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="form-group">

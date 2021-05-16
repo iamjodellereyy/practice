@@ -51,7 +51,7 @@
                 <tr>
                   <td>{{$post->id}}</td>
                   <td>{{$post->user->name}}</td>
-                  <td><a href="{{route('post.edit',$post->id)}}">{{$post->title}}</a></td>
+                  <td><a href="{{route('post.edit',$post->slug)}}">{{$post->title}}</a></td>
                   <td>
                     <img height="50px" src="{{asset($post->post_image)}}">
                   </td>
@@ -64,7 +64,7 @@
                   <td>
 
                     {{-- @can('view',$post) --}}
-                    <form method="post" action="{{route('post.destroy',$post->id)}}" enctype="multipart/form-data">
+                    <form method="post" action="{{route('post.destroy',$post->slug)}}" enctype="multipart/form-data">
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>

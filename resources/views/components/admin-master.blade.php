@@ -33,7 +33,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Home Page <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Home Page</div>
       </a>
 
       <!-- Divider -->
@@ -60,7 +60,7 @@
       @if(auth()->user()->userHasRole('Admin'))
       <x-admin.sidebar.admin-sidebar-users-links></x-admin.sidebar.admin-sidebar-users-links>
       <x-admin.sidebar.admin-sidebar-comments></x-admin.sidebar.admin-sidebar-comments>
-      <x-admin.sidebar.admin-sidebar-replies></x-admin.sidebar.admin-sidebar-replies>
+      {{-- <x-admin.sidebar.admin-sidebar-replies></x-admin.sidebar.admin-sidebar-replies> --}}
       <x-admin.sidebar.authorization-links></x-admin.sidebar.authorization-links>
       @endif
 
