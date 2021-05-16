@@ -48,7 +48,7 @@
                           <td>{{$comment->author}}</td>
                           <td>{{$comment->email}}</td>
 
-                          <td><a href="{{route('post',$comment->post->id)}}">View Post</a></td>
+                          <td><a href="{{route('post',$comment->post->slug)}}">View Post</a></td>
                           
                           <td>
                               @if($comment->is_active == 1)
